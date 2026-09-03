@@ -1,0 +1,282 @@
+/* ===== Reset ===== 
+   Removes browser default spacing and makes padding/borders 
+   count inside an element's width, not added on top of it. */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* ===== Base body styles =====
+   Sets the default font, text color, and line spacing 
+   for the whole page. Everything inherits from here 
+   unless a more specific rule overrides it. */
+body{
+    font-family: Arial, sans-serif;
+    color: #475569; /* Soft dark gray for comfortable paragraph reading */
+     background-color: #FFFFFF;
+    line-height: 1.5;
+}
+
+/* Global Headings Style */
+h2, h3 {
+    color: whitesmoke; /* Deep slate navy for high contrast headings */
+}
+/* ===== Header ===== 
+   Dark navy bar containing the logo and nav bar. 
+   Uses Flexbox to place the logo on the left and 
+   nav links on the right, vertically centered. */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #1a1a2e;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Logo text size inside the header */
+header h1 {
+    font-size: 1.5rem;
+}
+/* ===== Navigation bar =====
+   Turns the vertical link list into a horizontal row 
+   using Flexbox, with even spacing between links. */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+/* Nav link base styling */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Nav link hover effect — orange highlight on mouseover */
+nav a:hover {
+    color: #f0a500;
+}
+/* ===== Home section ===== 
+   Background image with a dark overlay, same technique 
+   as About, so text and button stay readable. */
+#home {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-image: url(images/image_acabc7f6.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+/* Dark overlay between the image and the content */
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Heading — lifted above the overlay */
+#home h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+/* Paragraph — lifted above the overlay */
+#home p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+    color: white;
+}
+
+/* Button — also needs lifting above the overlay, 
+   otherwise it'd render behind the dark layer */
+#home a {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    background-color: #f0a500;
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#home a:hover {
+    background-color: #d18e00;
+}
+/* ===== About section ===== 
+   Two-column layout: image on the left, text on the right. 
+   min-height: 100vh makes it fill the screen too, so scrolling 
+   from Home lands cleanly on a full About "page" rather than 
+   a short block with empty space below it. */
+#about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: white;
+    color: #222;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.about-content img {
+    width: 45%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.about-text {
+    width: 55%;
+    text-align: left;
+}
+
+.about-text h2 {
+    color: #222;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 1.05rem;
+}
+
+/* ===== Laptops section ===== 
+   Section wrapper — just spacing and a light background 
+   to separate it from the white About section above it. */
+#laptops {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/* Laptops section heading */
+#laptops h3 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: black;
+}
+
+/* The Flexbox container — this is what lays the cards 
+   out horizontally instead of stacking them vertically */
+.laptop-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Each individual product card */
+.laptop-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 280px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Product image — scales to fill the card width evenly */
+.laptop-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Product name */
+.laptop-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+/* Description text */
+.laptop-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Price — styled distinctly to stand out */
+.laptop-card .price {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #d18e00;
+}
+
+/* ===== Footer ===== 
+   Dark bar matching the header, with the copyright 
+   and contact info stacked and centered. */
+footer {
+    background-color: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.footer-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Style the mailto link to match the site's link conventions */
+footer a {
+    color: #f0a500;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Social icon row — spaced evenly, sized up from default text size */
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.4rem;
+}
+
+.social-icons a:hover {
+    color: #f0a500;
+}
