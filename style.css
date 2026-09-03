@@ -280,3 +280,86 @@ footer a:hover {
 .social-icons a:hover {
     color: #f0a500;
 }
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* ===== Tablet and below (768px) ===== */
+@media (max-width: 768px) {
+
+    /* Header: stack logo and nav vertically instead of side by side */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    /* Nav links: smaller gap so they fit better on a narrower bar */
+    nav ul {
+        gap: 20px;
+    }
+
+    /* About section: stack image above text instead of side by side */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content img,
+    .about-text {
+        width: 100%;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    /* Home heading: slightly smaller so it doesn't wrap awkwardly */
+    #home h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Laptop cards: allow them to grow a bit wider since fewer fit per row */
+    .laptop-card {
+        width: 45%;
+    }
+}
+
+/* ===== Mobile (480px) ===== */
+@media (max-width: 480px) {
+
+    /* Nav links: stack vertically, they won't fit in a row anymore */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Home: reduce height requirement and heading size further */
+    #home {
+        min-height: 80vh;
+        padding: 40px 15px;
+    }
+
+    #home h2 {
+        font-size: 1.5rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    /* About: same stacking as tablet, already handled above since 
+       max-width: 480px is narrower than 768px and inherits those rules */
+
+    /* Laptop cards: one per row on small phones */
+    .laptop-card {
+        width: 100%;
+    }
+
+    /* Footer social icons: slightly smaller gap on tiny screens */
+    .social-icons {
+        gap: 15px;
+    }
+}
