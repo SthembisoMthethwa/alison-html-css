@@ -41,5 +41,6 @@ A one-page site with smooth-scroll navigation between three sections: Home, Abou
 3. Open `index.html` in a browser, or use the **Live Server** extension for auto-reload while editing
 
 ## 📌 Status
-
+Running live on:
+https://sthembisomthethwa.github.io/alison-html-css/
 Actively being built as part of an ongoing HTML/CSS course.
